@@ -1,0 +1,185 @@
+:root {
+    --mainColor: rgb(248, 245, 234);
+    --mainText: black;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+    color: var(--mainText);
+}
+
+h1 {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    /*border: 1px black solid;*/
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: auto;
+    /*border: 1px solid black;*/
+}
+
+a{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    /*border: 1px solid black;*/
+    text-decoration: none;
+    padding: 2px;
+
+}
+
+.maincont{
+    width: 1200px;
+    margin: 50px auto;
+}
+@media screen and (max-width:1200px){
+    .maincont{
+        width: 95%;
+    }
+}
+
+.intro-wrapper{
+    /*border: 1px solid red;*/
+    display: grid;
+    border-radius: 10px;
+    grid-template-rows: 20em;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+        'left-column right-column';
+}
+
+.left-column{
+    justify-content: center;
+    align-content: center;
+    grid-area: left-column;
+    /*border: 1px dashed blue;*/
+    background-color: var(--mainColor);
+    margin: 20px;
+}
+
+@media screen and (max-width:800px){
+    .intro-wrapper{
+        /*border: 1px solid red;*/
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'left-column'
+            'right-column';
+    }
+}
+
+#profile-pic{
+    display: block;
+    margin: 5px auto;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 40%;
+    /*border: 5px solid white;*/
+}
+.right-column{
+    grid-area: right-column;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--mainColor);
+}
+
+.skills{
+    background-color: var(--mainColor);
+    display: grid;
+    border-radius: 10px;
+    grid-template-rows: 5em 5em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        'skill-1 skill-2 skill-3 skill-4 skill-5'
+        'skill-6 skill-7 skill-8 skill-9 skill-10'
+        ;
+}
+
+.skill-1, .skill-2, .skill-3, .skill-4, .skill-5, 
+.skill-6, .skill-7, .skill-8, .skill-9, .skill-10{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    background-color: var(--mainColor);
+}
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.art-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+}
+
+.art{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.art img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    object-fit: contain;
+}
+.layer{
+    width:100%;
+    height: 0;
+    background:linear-gradient(var(--mainColor), gray);
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: height 0.5s;
+    border-radius: 10px;
+}
+
+.art:hover .layer{
+    height: 25%;
+}
+
+@media screen and (max-width:800px){
+    .art-list{
+        /*border: 1px solid red;*/
+        grid-template-columns: 1fr;
+    }
+}
+
+.s1{
+    background-color: var(--mainColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto
+}
